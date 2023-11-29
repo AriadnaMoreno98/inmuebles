@@ -184,8 +184,8 @@ SIMPLE_JWT = {
     'REFRESH_TOKEN_LIFETIME': timedelta(days=365),
 }
 
-# try:
-#     from .local_settings import DATABASES, DEBUG
+try:
+    from .local_settings import DATABASES, DEBUG
     
-# except ImportError as e:
-#     print(e.msg)
+except ImportError as e:
+    print(e.msg)
