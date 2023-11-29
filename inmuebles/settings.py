@@ -77,7 +77,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'inmuebles.wsgi.application'
+WSGI_APPLICATION = 'inmuebles.wsgi.app'
 
 AUTH_USER_MODEL = 'user_app.Account'
 
@@ -99,6 +99,7 @@ DATABASES = {
         'NAME': 'railway',
         'PASSWORD': 'Dc-c1F3debD*2agcA*2gFcfcAc5Bd22b',
         'HOST': 'monorail.proxy.rlwy.net',
+        'PORT': '33159',
     }
 }
 
@@ -141,7 +142,7 @@ USE_TZ = True
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
-STATICFILES_DIRS = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATICFILES_DIRS = ['whitenoise.storage.CompressedManifestStaticFilesStorage']
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
@@ -182,8 +183,8 @@ SIMPLE_JWT = {
     'REFRESH_TOKEN_LIFETIME': timedelta(days=365),
 }
 
-try:
-    from .local_settings import DATABASES, DEBUG
+# try:
+#     from .local_settings import DATABASES, DEBUG
     
-except ImportError as e:
-    print(e.msg)
+# except ImportError as e:
+#     print(e.msg)
